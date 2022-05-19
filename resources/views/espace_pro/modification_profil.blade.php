@@ -128,9 +128,8 @@
     <div class="col-md-7 col-lg-9" >
         <div class="card">
             <div class="card-body">
-                <form action="update" method="get"> 
-                @csrf
-                {{-- <input type="hidden" name="_token" value="{{ csrf_token()}}"> --}}
+                <form action="{{route('update_prof')}}"> 
+                 @csrf
                     <div class="row form-row">
                         <div class="col-12 col-md-12">
                             <div class="form-group">
@@ -156,31 +155,31 @@
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Nom</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->name}}">
+                                <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Prénom</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->prenom}}">
+                                <input type="text" class="form-control" name="prenom" value="{{\Auth::user()->prenom}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Email ID</label>
-                                <input type="email" class="form-control" value="{{\Auth::user()->email}}">
+                                <input type="email" class="form-control" name="email" value="{{\Auth::user()->email}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Telephone</label>
-                                <input type="text" value="{{\Auth::user()->tel}}" class="form-control">
+                                <input type="text" value="{{\Auth::user()->tel}}" name="tel" class="form-control">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->adress}}">
+                                <input type="text" class="form-control" name="adress" value="{{\Auth::user()->adress}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-12">
@@ -191,31 +190,31 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Nom entreprise</label>
-                                <input type="text" class="form-control" value=" {{\Auth::user()->nom_societe}}">
+                                <input type="text" class="form-control" name="nom_societe" value=" {{\Auth::user()->nom_societe}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Telephone </label>
-                                <input type="text" value="{{\Auth::user()->tel2}}" class="form-control">
+                                <input type="text" value="{{\Auth::user()->tel2}}"  name="tel2" class="form-control">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Fix</label>
-                                <input type="text" value="{{\Auth::user()->Fix}}" class="form-control">
+                                <input type="text" value="{{\Auth::user()->Fix}}" name="Fix" class="form-control">
                         </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Ville</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->ville}}">
+                                <input type="text" class="form-control" name="ville" value="{{\Auth::user()->ville}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>code postal</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->code_postal}}">
+                                <input type="text" class="form-control" name="code_postal" value="{{\Auth::user()->code_postal}}">
                             </div>
                         </div>
                         <div class="col-12">
@@ -224,34 +223,40 @@
                                 <input type="text" class="form-control" value="{{\Auth::user()->adresse_entreprise}}">
                             </div>
                         </div>
-                        {{-- <div class="col-12">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label>Description</label>
                                 <textarea class="form-control" name="description" id="" cols="10" rows="5" >{{\Auth::user()->description}}</textarea>
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Heure début</label>
-                                <input type="time" class="form-control" value="{{\Auth::user()->heure_debut}}">
+                                <input type="time" class="form-control" name="heure_debut" value="{{\Auth::user()->heure_debut}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Heure fin</label>
-                                <input type="time" class="form-control" value="{{\Auth::user()->heure_fin}}" >
+                                <input type="time" class="form-control" name="heure_fin" value="{{\Auth::user()->heure_fin}}" >
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Numero siret</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->seret}}">
+                                <input type="text" class="form-control" name="seret" value="{{\Auth::user()->seret}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Numero Naf</label>
-                                <input type="text" class="form-control" value="{{\Auth::user()->code_naf}}">
+                                <input type="text" class="form-control" name="code_naf" value="{{\Auth::user()->code_naf}}">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-group">
+                                <label> libelle</label>
+                                <input type="text" class="form-control" name="libelle" value="{{\Auth::user()->libelle}}">
                             </div>
                         </div>
                         <div class="col-12 col-md-12">
@@ -266,9 +271,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
                                     </div>
-                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->siteweb}}">
+                                    <input type="text" class="form-control" id="basic-url" name="siteweb" aria-describedby="basic-addon3" value="{{\Auth::user()->siteweb}}">
                                 </div>      
-                        </div>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
@@ -276,9 +281,9 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
-                                </div>
-                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->instagram}}">
-                            </div>      
+                                    </div>
+                                    <input type="text" name="instagram" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->instagram}}">
+                                </div>      
                         </div>
                         </div>
                         <div class="col-12 col-md-6">
@@ -288,9 +293,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
                                     </div>
-                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->facebook}}" >
-                            </div>      
-                        </div>
+                                    <input type="text" name="facebook" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->facebook}}" >
+                                </div>      
+                            </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
@@ -299,7 +304,7 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
                                     </div>
-                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"value="{{\Auth::user()->linkdin}}" >
+                                    <input type="text" name="linkdin" class="form-control" id="basic-url" aria-describedby="basic-addon3"value="{{\Auth::user()->linkdin}}" >
                                 </div>      
                             </div>
                         </div>
@@ -308,16 +313,16 @@
                                 <label>Google My business</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
+                                        <span class="input-group-text" id="basic-addon3" style="font-size: 12px;">https://</span>
                                     </div>
-                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->google}}">
+                                    <input type="text" name="google" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{\Auth::user()->google}}">
                                 </div>      
                             </div>
                         </div>
                         </div>
                         <div class="submit-section">
                             <button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
-                    </div>
+                        </div>
                 </form>
             </div>
         </div>

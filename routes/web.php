@@ -32,9 +32,10 @@ use Illuminate\Support\Facades\Route;
  Route::get('/espace_pro/profil' ,[App\Http\Controllers\espacePro\gestion_profilController::class, 'index'])->name('showprofil');
  Route::get('/espace_pro/modificationprofil' ,[App\Http\Controllers\espacePro\modification_profilController::class, 'index'])->name('modificcationprofil');
  Route::get('/espace_pro/gestioncat' ,[App\Http\Controllers\espacePro\gestion_catController::class, 'index'])->name('gestion_cat');
- Route::get('/espace_pro/gestionville' ,[App\Http\Controllers\espacePro\gestion_ville::class, 'index'])->name('gestion_ville');
+ Route::get('/espace_pro/gestionville' ,[App\Http\Controllers\espacePro\gestion_villeController::class, 'afficher'])->name('afficher');
  Route::post('/espace_pro/profil/updatepasse' ,[App\Http\Controllers\espacePro\gestion_profilController::class, 'updatePasse'])->name('updatePasse');
- Route::post('/espace_pro/profil/modifierProfil' ,[App\Http\Controllers\espacePro\modification_profilController::class, 'update'])->name('update');
+ Route::get('/espace_pro/profil/modifierProfil' ,[App\Http\Controllers\espacePro\modification_profilController::class, 'update_prof'])->name('update_prof');
+Route::get('/espace_pro/gestionville/delete_ville{id}',[App\Http\Controllers\espacePro\gestion_villeController::class, 'delete_ville'])->name('delete_ville');
 
  
  Auth::routes();

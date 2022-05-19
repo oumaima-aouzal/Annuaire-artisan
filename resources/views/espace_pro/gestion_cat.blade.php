@@ -130,7 +130,7 @@
 </div>
 </div>
 </div>
-
+<form action="{{route('gestion_cat')}}">
 <div class="row">
 <div class="col-sm-12">
 <div class="card">
@@ -138,8 +138,6 @@
 <div class="table-responsive">
 <table class="datatable table table-hover table-center mb-0">
 <thead>
-	
-	
 	<button type="button" class="btn btn-default btn-sm " style="margin-left: 900px; background-color: #5f4be2; color: aliceblue; float: right; "  href="javascript:void(0);" onclick="tst();" >
 		<i class="fa fa-plus "></i> Ajouter
 	  </button>
@@ -157,70 +155,22 @@
 </tr>
 </thead>
 <tbody>
+@foreach ($details as $item)
 <tr>
 <td>
 <h2 class="table-avatar">
-<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{asset('admin\assets\img\user\user.jpg')}}" alt="User Image"></a>
-<a href="profile.html">Jonathan Doe </a>
+<a href="" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{asset('assets/img/'.$item->image_categorie )}}"></a>
+<a href="">{{$item->nom_categorie}}</a>
 </h2>
 </td>
-<td>Maths</td>
+<td>{{$item->nom_specialite}}</td>
 
 <td><a data-toggle="modal"  class="btn btn-sm bg-danger-light">
 	<i class="fe fe-trash"></i> Supprimer
 	</a></td>
-
-
 </td>
 </tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{asset('admin\assets\img\user\user1.jpg')}}" alt="User Image"></a>
-<a href="profile.html">Julie Pennington </a>
-</h2>
-</td>
-<td>Business Maths</td>
-
-<td><a data-toggle="modal"  class="btn btn-sm bg-danger-light">
-	<i class="fe fe-trash"></i> Supprimer
-	</a></td>
-
-
-</td>
-
-</tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{asset('admin\assets\img\user\user2.jpg')}}" alt="User Image"></a>
-<a href="profile.html">Tyrone Roberts</a>
-</h2>
-</td>
-<td>Algebra</td>
-
-<td><a data-toggle="modal"  class="btn btn-sm bg-danger-light">
-	<i class="fe fe-trash"></i> Supprimer
-	</a></td>
-
-
-</td>
-
-</tr>
-<tr>
-<td>
-<h2 class="table-avatar">
-<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{asset('admin\assets\img\user\user3.jpg')}}" alt="User Image"></a>
-<a href="profile.html">Allen Davis </a>
-</h2>
-</td>
-<td>Integrated Sum</td>
-<td>
-<a data-toggle="modal"  class="btn btn-sm bg-danger-light">
-  <i class="fe fe-trash"></i> Supprimer
-</a></td>
-</td>
-</tr>
+@endforeach
 </tbody>
 </table>
 </div>
@@ -228,6 +178,7 @@
 </div>
 </div>
 </div>
+</form>
 </div>
 </div>
 </div>

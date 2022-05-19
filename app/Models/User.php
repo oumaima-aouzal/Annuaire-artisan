@@ -70,8 +70,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password','prenom','tel','nom_societe','tel2','Fix',
         'seret','code_naf','libelle','adress','logo','facebook','linkdin','instagram',
-        'google','siteweb','description','heure_debut','heure_fin','Semaine','jours','ville','ville2',
-        'categorie','specialite','departement','code_postal'
+        'google','siteweb','description','heure_debut','heure_fin','Semaine','jours','ville',
+        'code_postal'
     ];
 
     /**
