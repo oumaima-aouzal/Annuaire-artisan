@@ -87,14 +87,14 @@
                           <li><a href="{{url('/espace_pro/modifictionprofil#password_tab')}}"> Changer mot de passe </a></li>
                       </ul>
                   </li>
-                  <li class="submenu active">
+                  <li class="submenu ">
                       <a href="#"><i data-feather="package"></i> <span> Categories </span> <span class="menu-arrow"></span></a>
                       <ul>
                           <li><a href="{{url('/espace_pro/gestioncat')}}">Consulter liste categorie </a></li>
                           <li><a href="{{url('/espace_pro/gestioncat')}}"> Ajouter Categorie </a></li>
                       </ul>
                   </li>
-                  <li class="submenu">
+                  <li class="submenu active">
                       <a href="#"><i data-feather="file"></i> <span> Villes </span> <span class="menu-arrow"></span></a>
                       <ul>
                           <li><a href="{{url('/espace_pro/gestionville')}}">Consulter liste Villes </a></li>

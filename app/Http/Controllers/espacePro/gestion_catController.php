@@ -25,4 +25,10 @@ class gestion_catController extends Controller
         $user=User::get();
         return view('espace_pro.gestion_cat')->with('spec',$spec)->with('cat',$cat)->with('user',$user)->with('details',$details);
     }
+
+    public function delete_cat($id){
+        Cat_Spec_Art::where('id',$id)
+        ->delete();
+        return back();
+    }
 }

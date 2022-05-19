@@ -165,11 +165,25 @@
 </td>
 <td>{{$item->nom_specialite}}</td>
 
-<td><a data-toggle="modal"  class="btn btn-sm bg-danger-light">
+<td><a data-toggle="modal"  class="btn btn-sm bg-danger-light" href="#delete_modal{{$item->id}}">
 	<i class="fe fe-trash"></i> Supprimer
 	</a></td>
 </td>
 </tr>
+<div class="modal fade" id="delete_modal{{$item->id}}" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-content p-2">
+                    <h4 class="modal-title">Supprimer</h4>
+                    <p class="mb-4">Voule-vous vraiment supprimer?</p>
+                    <a type="" href="{{route('delete_cat',[$item->id])}}" class="btn btn-primary" >Supprimer </a> 
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endforeach
 </tbody>
 </table>

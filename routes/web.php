@@ -35,7 +35,9 @@ use Illuminate\Support\Facades\Route;
  Route::get('/espace_pro/gestionville' ,[App\Http\Controllers\espacePro\gestion_villeController::class, 'afficher'])->name('afficher');
  Route::post('/espace_pro/profil/updatepasse' ,[App\Http\Controllers\espacePro\gestion_profilController::class, 'updatePasse'])->name('updatePasse');
  Route::get('/espace_pro/profil/modifierProfil' ,[App\Http\Controllers\espacePro\modification_profilController::class, 'update_prof'])->name('update_prof');
-Route::get('/espace_pro/gestionville/delete_ville{id}',[App\Http\Controllers\espacePro\gestion_villeController::class, 'delete_ville'])->name('delete_ville');
+ Route::get('/espace_pro/gestionville/delete_ville{id}',[App\Http\Controllers\espacePro\gestion_villeController::class, 'delete_ville'])->name('delete_ville');
+ Route::get('/espace_pro/gestionville/delete_cat{id}',[App\Http\Controllers\espacePro\gestion_catController::class, 'delete_cat'])->name('delete_cat');
+
 
  
  Auth::routes();
